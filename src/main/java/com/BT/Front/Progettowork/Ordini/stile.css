@@ -1,0 +1,116 @@
+body{
+	background-color: #DDDDDD;
+}
+
+h2{
+	text-align: center;
+	background-color: #DF0000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 50px;
+	color: white;
+	width: 850px;
+	float: right;
+}
+
+img{
+	margin-top: 20px;
+}
+
+fieldset{
+	width: 350px;
+}
+
+legend{
+	font-style: italic;
+	color: #DF0000;
+}
+
+.nome input{
+	position: absolute;
+	left: 10%;
+}
+
+.ins span{
+	color: green;
+	font-style: bolder;
+	margin-right: 20px;
+}
+
+.acc span{
+	color: green;
+	font-style: bolder;
+	margin-right: 20px;
+}
+
+.nome span{
+	color: blue;
+	font-style: bolder;
+}
+
+.mod span{
+	color: blue;
+	font-style: bolder;
+}
+
+.mod select{
+	position: absolute;
+	left: 10%;
+}
+
+.del{
+	text-align: center;
+}
+
+.button{
+	margin-left: 5px;
+	background-color: lightgreen;
+	border-radius: 50px;
+}
+
+.button2{
+	background-color: orange;
+	margin-left: 10px;
+	border-radius: 50px;
+}
+
+.button3{
+	background-color: coral;
+	margin-left: 10px;
+	border-radius: 50px;
+}
+
+th{
+   background-color: #DF0000;
+   text-align: center;
+   color: white;
+   width: 100px;
+}
+
+td{
+	background-color: white;
+	text-align: center;
+}
+
+table{
+	position: absolute;
+	top: 30%;
+	left: 37%;
+}
+
+h3{
+	position: absolute;
+	top: 20%;
+	left: 58%;
+	font-style: italic;
+}
+
+footer{
+	background-color: #DF0000;
+	color: white;
+	margin-top: 15px;
+	text-align: center;
+	border-radius: 50px;
+	width: 1000px;
+	margin-left: 10%;
+}

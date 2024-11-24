@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shop online</title>
+    <link rel="stylesheet" href="stile.css">
+    <script type="text/javascript">
+
+        var elementi=[];
+
+        function faiQualcosa() {
+          var nome=document.getElementById("nome").value;
+          console.log(nome);
+
+          var cognome=document.getElementById("cognome").value;
+          console.log(cognome);
+
+		  var email=document.getElementById("email").value;
+          console.log(email);
+
+		  var modello=document.getElementById("modello");
+          console.log(modello.options[modello.selectedIndex].value);
+          var modello=modello.options[modello.selectedIndex].value;
+
+          var ins=document.getElementsByName("ins");
+          for(var i=0;i<ins.length;i++){
+            if (ins[i].checked){
+              console.log(ins[i].value);
+              var ins=ins[i].value;
+            }
+          }
+
+		  var acc=document.getElementsByName("acc");
+          for(var i=0;i<acc.length;i++){
+            if (acc[i].checked){
+              console.log(acc[i].value);
+              var acc=acc[i].value;
+            }
+          }
+
+		  var del=document.getElementById("del");
+          console.log(del.options[del.selectedIndex].value);
+          var del=del.options[del.selectedIndex].value;
+
+          elemento = {};
+          elemento.nome=nome;
+          elemento.cognome=cognome;
+		  elemento.email=email;
+		  elemento.modello=modello;
+          elemento.ins=ins;
+		  elemento.acc=acc;
+		  elemento.del=del;
+          elementi.push(elemento);
+
+		  reset();
+
+        }
+
+        function creaTab(){
+         var tabella="";
+
+         tabella+="<table>";
+         tabella+="<tr>";
+         tabella+="<th>" + "Nome" + "</td>";
+         tabella+="<th>" + "Cognome" + "</td>";
+		 tabella+="<th>" + "Email" + "</td>";
+		 tabella+="<th>" + "Modello" + "</td>";
+         tabella+="<th>" + "Assicurazione" + "</td>";
+		 tabella+="<th>" + "Accessori" + "</td>";
+		 tabella+="<th>" + "Consegna" + "</td>";
+         tabella+="</tr>";
+
+         for (var i = 0; i < elementi.length; i++) {
+
+             tabella+="<tr>";
+             tabella+="<td>" + elementi[i].nome + "</td>";
+             tabella+="<td>" + elementi[i].cognome + "</td>";
+			 tabella+="<td>" + elementi[i].email + "</td>";
+			 tabella+="<td>" + elementi[i].modello + "</td>";
+             tabella+="<td>" + elementi[i].ins + "</td>";
+			 tabella+="<td>" + elementi[i].acc + "</td>";
+			 tabella+="<td>" + elementi[i].del + "</td>";
+             tabella+="</tr>";
+
+         }
+         tabella+="</table>";
+         document.getElementById("valori").innerHTML=tabella;
+       }
+    </script>
+  </head>
+  <body>
+    <form>
+    <div class="input">
+        <img src="logo.png"/><h2>Ordina il tuo nuovo smartphone!</h2>
+		<br><br><br>
+      <fieldset><legend>Dati Personali</legend>
+        <div class="nome">
+		  <br>
+          <span>Nome</span> <input type="text" name="nome" id="nome" value="" maxlength="20" required><br>
+		  <br>
+          <span>Cognome</span> <input type="text" name="cognome" id="cognome" value="" maxlength="20" required><br>
+		  <br>
+		  <span>Email</span> <input type="email" name="email" id="email" value="" maxlength="20" required></br>
+            <ul class="navbar-nav flex-column text-sm-center text-md-left">
+
+      </fieldset>
+      <br>
+      <fieldset><legend>Ordine</legend>
+	    <div class="mod">
+		  <br>
+          <span>Modello</span> <select id="modello">
+			<option value="Samsung Galaxy S20+">Samsung Galaxy S20+</option>
+			<option value="Apple iPhone 11 Pro Max">Apple iPhone 11 Pro Max</option>
+			<option value="Xiaomi Mi 10 Pro">Xiaomi Mi 10 Pro</option>
+			<option value="Huawei P40 Pro">Huawei P40 Pro</option>
+			<option value="OnePlus 8 Plus">OnePlus 8 Pro</option>
+          </select>
+        </div>
+		<br>
+        <div class="ins">
+		  <span>Assicurazione</span>
+          Si <input type="radio" id="ins" name="ins" value="Sì" checked>
+          No<input type="radio" name="ins" id="ins" value="No">
+          <br>
+        </div>
+		<div class="acc">
+		  <br>
+		  <span>Accessori (Cover + Vetro temperato)</span>
+          Si<input type="radio" id="acc" name="acc" value="Sì" checked>
+          No<input type="radio" name="acc" id="acc" value="No">
+          <br>
+        </div>
+      </fieldset>
+	  <br>
+	  <fieldset><legend>Consegna</legend>
+		<div class="del">
+		  <br>
+          <select id="del">
+			<option value="Consegna a domicilio 48/72 h">Consegna a domicilio 48/72 h</option>
+			<option value="Consegna a domicilio 24 h">Consegna a domicilio 24 h</option>
+			<option value="Ritiro in negozio tra 2 h">Ritiro in negozio tra 2 h</option>
+          </select>
+        </div>
+	  </fieldset>
+        <br>
+        <input type="button" class="button" name="" value="Ordina il prodotto" onclick="faiQualcosa();">
+        <input type="button" class="button2" name="" value="Ordini Precedenti" onclick="creaTab();">
+		<input type="reset" class="button3" name="" value="Pulisci i campi">
+
+    </div>
+	</form>
+	<h3>ORDINI PRECEDENTI</h3>
+    <div class="tab" id="valori">
+
+    </div>
+	<footer>Copyrigth amadou ba </footer>
+  </body>
+</html>
